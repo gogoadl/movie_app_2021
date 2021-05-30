@@ -1,22 +1,24 @@
 import React from 'react';
 
 
-function Data({name}) {
-  return <h1>I like {name} </h1>
-}
-
-
 const datas = [
-  { name : "황지원" },
-  { name : "바보" },
-  { name : "사랑해" }
+  { id : 1, name : "황지원" },
+  { id : 2, name : "바보" },
+  { id : 3, name : "사랑해" }
 ]
 
+function Data({name}) {
+  return (
+  <div>
+  <h1>I like {name} </h1>
+  </div>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-    {datas.map(names => <Data name ={names.name}></Data>)}
+    {datas.map(names => <Data key={names.id} name ={names.name}></Data>)}
     </div>
   );
 }
